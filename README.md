@@ -16,3 +16,8 @@ This program shall have a few advanced funcitonailty that our simple tcp chatroo
 9) If the user doesn't exist it says "sorry that user is not in this session
 10) If a user gets kicked, they will have to reconnect
 11) If the user get's /banned, they can't sign in with the same nickname. 
+
+
+
+
+So this is what I am thinking of doing: So I will be using the old TCP chat room code as the base of where I am going with this, the first step is to create an admin account. Maybe I should also be echoing it on the server. 
