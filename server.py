@@ -63,11 +63,21 @@ def new_connection_message(client_socket, client_name):
             message = f"{client_name} has joined the chat!"
             broad_cast_message(connections,message)
 
+def is_int(s:str) -> bool:
+
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return ValueError
+
 def is_admin(client_socket):
     message = "What is the password?".encode('utf-8')
     client_socket.sendall(message)
     message = client_socket.recv(4096)
     decoded_message = message.decode("utf-8")
+
+    if int(decoded_message)
 
 ## TODO: Handle in a try catch.
 def handle_new_connection(client_socket):
