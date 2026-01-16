@@ -69,7 +69,7 @@ def is_int(s:str) -> bool:
         int(s)
         return True
     except ValueError:
-        return ValueError
+        return False
 
 def is_admin(client_socket):
     message = "What is the password?".encode('utf-8')
@@ -77,7 +77,8 @@ def is_admin(client_socket):
     message = client_socket.recv(4096)
     decoded_message = message.decode("utf-8")
 
-    if int(decoded_message)
+    if is_int(decoded_message):
+        
 
 ## TODO: Handle in a try catch.
 def handle_new_connection(client_socket):
