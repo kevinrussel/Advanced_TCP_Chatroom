@@ -58,12 +58,16 @@ def handle_method(client_socket, message):
 
 # TODO: Handle in a try catch maybe?
 def new_connection_message(client_socket, client_name):
-
     for index, connections in enumerate(CONNECTION):
         if connections != client_socket:
             message = f"{client_name} has joined the chat!"
             broad_cast_message(connections,message)
 
+def is_admin(client_socket):
+    message = "What is the password?".encode('utf-8')
+    client_socket.sendall(message)
+    message = client_socket.recv(4096)
+    decoded_message = message.decode("utf-8")
 
 ## TODO: Handle in a try catch.
 def handle_new_connection(client_socket):
@@ -72,6 +76,9 @@ def handle_new_connection(client_socket):
             message = client_socket.recv(4096)
             decoded_message = message.decode("utf-8")
             print(f"The client name is {decoded_message}\n")
+
+            if(decoded_message == "kevin"):
+                is_admin(client_socket)
             CONNECTION.append(client_socket)
             NICKNAME.append(decoded_message)
             new_connection_message(client_socket,decoded_message)
