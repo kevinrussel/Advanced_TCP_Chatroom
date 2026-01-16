@@ -72,13 +72,20 @@ def is_int(s:str) -> bool:
         return False
 
 def is_admin(client_socket):
-    message = "What is the password?".encode('utf-8')
-    client_socket.sendall(message)
+    client_socket.sendall(b"What is the password?")
     message = client_socket.recv(4096)
     decoded_message = message.decode("utf-8")
+    if not decoded_message:
+        return False
+    try:
+        password = int(decoded_message)
+    except ValueError:
+        return False
+    return password == 1234
 
-    if is_int(decoded_message):
-        
+    
+    
+# TODO: Add an exit for wrong password.
 
 ## TODO: Handle in a try catch.
 def handle_new_connection(client_socket):
@@ -89,7 +96,9 @@ def handle_new_connection(client_socket):
             print(f"The client name is {decoded_message}\n")
 
             if(decoded_message == "kevin"):
-                is_admin(client_socket)
+                if not is_admin(client_socket):
+                    print("hitting")
+                    return
             CONNECTION.append(client_socket)
             NICKNAME.append(decoded_message)
             new_connection_message(client_socket,decoded_message)
