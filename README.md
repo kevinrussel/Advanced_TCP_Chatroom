@@ -21,3 +21,6 @@ This program shall have a few advanced funcitonailty that our simple tcp chatroo
 
 
 So this is what I am thinking of doing: So I will be using the old TCP chat room code as the base of where I am going with this, the first step is to create an admin account. Maybe I should also be echoing it on the server. 
+
+
+I am honestly doing this edit so that I keep my streak>
