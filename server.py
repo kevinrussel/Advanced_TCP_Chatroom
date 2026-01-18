@@ -83,7 +83,8 @@ def is_admin(client_socket):
         return False
     return password == 1234
 
-    
+def fraud_funct():
+    TTHIS FUNCTION DOES NOTHIGN WHAT AM i DOING
     
 # TODO: Add an exit for wrong password.
 
