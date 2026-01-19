@@ -7,14 +7,12 @@ import threading
 
 NICKNAME = []
 CONNECTION = []
-
+BLOCKED_NAMES = []
 def broad_cast_message (client_socket, message):
     client_socket.sendall(message.encode('utf-8'))
     return
 
 
-DEF STUPID FUNC():
-ALKSDJFLKAJSDLFKJAL
 
 def handle_method(client_socket, message):
     broad_cast_message(client_socket, message)
