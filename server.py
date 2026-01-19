@@ -13,7 +13,8 @@ def broad_cast_message (client_socket, message):
     return
 
 
-
+DEF STUPID FUNC():
+ALKSDJFLKAJSDLFKJAL
 
 def handle_method(client_socket, message):
     broad_cast_message(client_socket, message)
