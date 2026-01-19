@@ -24,3 +24,4 @@ So this is what I am thinking of doing: So I will be using the old TCP chat room
 
 
 I am honestly doing this edit so that I keep my streak>
+Seeing if the new laptop works
